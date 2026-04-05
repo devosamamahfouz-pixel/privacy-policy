@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Parent App</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Mulish:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: rgb(15, 23, 42);
+      --bg-card: rgb(22, 33, 58);
+      --purple: #a855f7;
+      --text: #e2e8f0;
+      --text-soft: #94a3b8;
+      --text-muted: #64748b;
+      --border: rgba(168, 85, 247, .2);
+      --border-dim: rgba(255, 255, 255, .07);
+      --radius: 12px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Mulish', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      position: relative;
+      padding: 72px 24px 64px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 340px;
+      background: radial-gradient(ellipse, rgba(124, 58, 237, .35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 16px;
+      background: rgba(168, 85, 247, .1);
+      border: 1px solid rgba(168, 85, 247, .3);
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 24px;
+    }
+
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--purple);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--purple);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 400;
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, #c084fc, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: var(--text-soft);
+      font-size: 14.5px;
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .meta span {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      color: var(--text-muted);
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-dim);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .num {
+      font-style: italic;
+      color: var(--purple);
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .section p {
+      font-size: 14.5px;
+      color: var(--text-soft);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul.list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    ul.list li {
+      font-size: 14.5px;
+      color: var(--text-soft);
+      font-weight: 300;
+      padding: 8px 0 8px 18px;
+      position: relative;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    ul.list li:last-child {
+      border-bottom: none;
+    }
+
+    ul.list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    ul.list strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .note {
+      background: rgba(168, 85, 247, .08);
+      border: 1px solid rgba(168, 85, 247, .2);
+      border-radius: var(--radius);
+      padding: 13px 18px;
+      font-size: 13.5px;
+      color: #c4b5fd;
+      margin: 14px 0;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-top: 14px;
+    }
+
+    .contact-box p {
+      font-size: 14px;
+      color: var(--text-soft);
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border-dim);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--purple);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="chip"><span class="chip-dot"></span>Parent App</div>
+      <h1>Privacy <em>Policy</em></h1>
+      <p>This policy explains how we handle your data in the nursery management Parent App.</p>
+      <div class="meta">
+        <span>Effective: 05 Apr 2026</span>
+        <span>Parent App</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <div class="section reveal">
+      <h2><span class="num">01</span> Overview</h2>
+      <p>the <strong>EduRoute Parent</strong>, a mobile application for parents and guardians to stay connected with
+        their child's nursery. This policy explains what data we collect and how we use it.</p>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">02</span> What We Collect</h2>
+      <ul class="list">
+        <li><strong>Home address</strong> — your registered pickup and drop-off address, shared with the assigned driver
+          for navigation.</li>
+        <li><strong>Enrollment information</strong> — enrollment details, used to link your account to the correct child
+          records.</li>
+        <li><strong>Trip and status history</strong> — records of past trips and child status updates for your
+          reference.</li>
+      </ul>
+      <div class="note">
+        <span>📍</span>
+        <span>The Parent App does <strong>not</strong> collect or track your device's GPS location. The live map shows
+          the driver's location only.</span>
+      </div>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">03</span> How We Use It</h2>
+      <ul class="list">
+        <li>To display the assigned driver's live location on the map during active pickup and drop-off trips.</li>
+        <li>To show you your child's real-time status as updated by the driver (Arrived at Home, On Boarding,
+          Delivered).</li>
+        <li>To send push notifications about trip progress and your child's status changes.</li>
+        <li>To share your home address with the assigned driver's navigation for pickup and drop-off routing.</li>
+      </ul>
+      <div class="note">
+        <span>⚠️</span>
+        <span>We do not sell or share your data or your enrollment information with third parties for advertising or any
+          commercial purpose.</span>
+      </div>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">04</span> Live Tracking</h2>
+      <p>During an active trip, the driver's GPS location is streamed to your map in real time. This stops as soon as
+        the trip ends. Your own location is never requested or collected by the app.</p>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">05</span> Data Sharing</h2>
+      <p>Your home address is shared with the driver assigned to your child's route for navigation only. Trip history
+        and your account details are accessible to the nursery administration. We use trusted third-party providers
+        (cloud hosting, push notifications) under strict data agreements. We do not sell your data.</p>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">06</span> Data Retention</h2>
+      <p>Account and enrollment data is kept while your account is active and deleted within 30 days of closure. Trip
+        and status records are deleted after 90 days.</p>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">07</span> Your Rights</h2>
+      <p>You have the right to access, correct, or request deletion of your personal data and your child's data. Contact
+        us at the address below and we will respond within 30 days.</p>
+    </div>
+
+    <div class="section reveal">
+      <h2><span class="num">08</span> Contact</h2>
+      <div class="contact-box">
+        <p><strong>EduRoute</strong></p>
+        <p>📧 <a href="mailto:dev.osama.mahfouz@gmail.com">dev.osama.mahfouz@gmail.com</a></p>
+      </div>
+      <p style="margin-top:18px; font-size:13.5px; color:var(--text-muted); font-weight:300;">We may update this policy
+        from time to time. Continued use of the app after any update constitutes your acceptance.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p><span>EduRoute Parent</span> &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; © 2026 EduRoute</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: .08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
